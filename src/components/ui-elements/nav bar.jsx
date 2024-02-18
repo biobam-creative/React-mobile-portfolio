@@ -70,10 +70,12 @@ const Menu = styled.ul`
 `;
 
 const Item = styled.li`
-    padding: 2rem;
+    padding: 3rem;
     :hover {
         background-color: #4d008a;
         color: white;
+        border-radius: 25px;
+        padding: 1rem;
     }
     @media (min-width: 768px) {
         display: inline-block;
@@ -94,22 +96,21 @@ const NavBar = () => {
     console.log(navOpen);
     return (
         <Header>
-            <Brand>
-                <Logo src={logo} />
-            </Brand>
+            <Link to="/">
+                <Brand>
+                    <Logo src={logo} />
+                </Brand>
+            </Link>
             <LinksWrap toggleNav={navOpen}>
                 <Menu toggleNav={navOpen}>
                     <Item>
-                        <ItemLink to="/home">Home</ItemLink>
+                        <ItemLink to="/">Home</ItemLink>
                     </Item>
                     <Item>
-                        <ItemLink to="home">About Me</ItemLink>
+                        <ItemLink to="/portfolio">My Portfolio</ItemLink>
                     </Item>
                     <Item>
-                        <ItemLink to="home">My Portfolio</ItemLink>
-                    </Item>
-                    <Item>
-                        <ItemLink to="home">Contact Me</ItemLink>
+                        <ItemLink to="/contact">Contact Me</ItemLink>
                     </Item>
                 </Menu>
             </LinksWrap>
